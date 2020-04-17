@@ -11,6 +11,8 @@
 % and saved them into a mat file we could load directly the mat file
 % (much faster). If not, we have to answer '1' to the following question.
 
+try
+
 Download=input('Download Data from JHU-CSSE GitHub Repository (1/0)? ');
 
 if (Download)
@@ -75,6 +77,9 @@ ylabel('Daily Covid-19 Deaths');
 title('New Covid-19 Deaths (lineal scale)');
 legend(Countries)
 
+catch
+    disp('File do not found. You must download first the Covid19 Data from JHU-CSSE GitHub.')        
+end
 
 % The following function converts the csv files from JHU 
 % into an array of cells.
